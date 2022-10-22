@@ -1,0 +1,17 @@
+
+<script type='text/javascript'>
+var stm=Math.floor(Date.now()/1000);
+var ltm=150;
+var cdtm=setInterval(function(){
+var ntm=Math.floor(Date.now()/1000);
+var fark=((stm-ntm)+ltm);
+var me = parseInt(fark/60);
+var se = parseInt(fark%60);
+$('#gettimesf').html('Please wait '+me+' minute(s) '+se+' seconds for your next submit!');
+if(me<=0 && se<=0){
+clearInterval(cdtm);
+$('#gettimesf').html('Next Submit: READY....!');
+}
+},500);
+</script>
+<h4 style='text-align:center;color:#337ab7;font-weight:bold;font-size:115%;' id='gettimesf'>Checking Timer...</h4>
